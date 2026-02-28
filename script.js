@@ -2,9 +2,9 @@
 Calcolare il prezzo totale del viaggio, secondo queste regole:
 
 1)il prezzo del biglietto è definito in base ai km (0.21 € al km),
-2)va applicato uno sconto del 20% per i minorenni,
-3)va applicato uno sconto del 40% per gli over 65.,
-4)L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). 
+2)Calcolo prezzo del viaggio.
+(Va applicato uno sconto del 20% per i minorenni; va applicato uno sconto del 40% per gli over 65.)
+3)L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). 
 Questo richiederà un minimo di ricerca.
 */
 
@@ -25,15 +25,46 @@ console.log("Tariffa al chilometro: "+tariffaKm.toString()+" euro");
  - Crea variabile in cui inserire numero chilometri da viaggiare.
 - Controlla che il valore inserito non sia negativo.
 */
-let chilometers = prompt("Inserisci i chilometri del tuo viaggio");
-console.log("I chilometri del tuo viaggio sono: "+chilometers);
+let chilometersStr = prompt("Inserisci i chilometri del tuo viaggio");
+let chilometersInt= parseInt(chilometersStr);
+console.log("I chilometri del tuo viaggio sono: "+chilometersStr);
 
 /*
 - Crea una variabile in cui inserire età del passeggero.
 - Controlla che il valore inserito non sia negativo.
 */
-let etàPasseggero=prompt("Inserisci la tua età");
-console.log("La tua eta è: "+etàPasseggero);
+let etàPasseggeroStr=prompt("Inserisci la tua età");
+let etàPasseggeroInt= parseInt(etàPasseggeroStr);
+console.log("La tua eta è: "+etàPasseggeroStr);
+
+/* 
+2)Calcolo il prezzo del viaggio, applicando lo sconto se necessario.
+(Va applicato uno sconto del 20% per i minorenni; va applicato uno sconto del 40% per gli over 65.)
+- Creo la variabile in cui assegno il prezzo pieno.
+-Creo un costrutto if per controllare l'età del passeggero ed applicare eventualmente lo sconto.
+*/
+
+//calcolo il prezzo pieno
+let priceTicket= chilometersInt * tariffaKm;
+console.log(priceTicket);
+
+//controllo l'età del passeggero ed applico se necessario lo sconto del prezzo.
+// (Va applicato uno sconto del 20% per i minorenni; va applicato uno sconto del 40% per gli over 65.)
+if (etàPasseggeroInt < 18){
+    //passeggero minorenne: sconto del 20%
+    let sconto=priceTicket*20/100;
+    //prezzo scontato
+    priceTicket=priceTicket-sconto;
+    /* console.log("il prezzo scontato è: "+priceTicket.toString()); */
+
+}else if(etàPasseggeroInt > 65){
+    //passeggero over65: sconto del 40%
+    let sconto=priceTicket*40/100;
+    //prezzo scontato
+    priceTicket=priceTicket-sconto;
+}
+
+
 
 
 
