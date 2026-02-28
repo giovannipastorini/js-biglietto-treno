@@ -2,8 +2,10 @@
 Calcolare il prezzo totale del viaggio, secondo queste regole:
 
 1)il prezzo del biglietto è definito in base ai km (0.21 € al km),
+
 2)Calcolo prezzo del viaggio.
 (Va applicato uno sconto del 20% per i minorenni; va applicato uno sconto del 40% per gli over 65.)
+
 3)L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). 
 Questo richiederà un minimo di ricerca.
 */
@@ -71,14 +73,19 @@ Questo richiederà un minimo di ricerca.
 
 /* console.log(priceTicket); */
 
+/* 
 let priceTicketStr=priceTicket.toString();
 
 priceTicket= parseFloat(priceTicketStr).toFixed(2);
 console.log("Il prezzo del tuo biglietto è:");
-console.log(priceTicket);
+console.log(priceTicket); 
+*/
 
+/* let priceTicketStr=priceTicket.toString();
 
+priceTicket= parseFloat(priceTicketStr).toFixed(2); */
+console.log("Il prezzo del tuo biglietto è:");
+console.log(priceTicket.toFixed(2));
 
-
-
+//extra
 
